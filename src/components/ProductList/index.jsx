@@ -48,9 +48,10 @@ export const ProductsList = () => {
 
   return(
 <>
+<h1>Produtos</h1>
     <Container>
       {products.map((prod)=>(
-        <div key={prod.id}>
+        <div style={{backgroundColor:'#778beb'}} key={prod.id}>
         <h2>{prod.title}</h2>
         <p>{prod.description}</p>
         <h2>R${prod.price.toFixed(2)}</h2>
@@ -59,14 +60,15 @@ export const ProductsList = () => {
         </div>
       ))}
     </Container>
+    <h1>Carrinho</h1>
       <Container>
       {cart.map((prod)=>(
-        <div key={prod.id}>
+        <div style={{backgroundColor:'#ea8685'}} key={prod.id}>
         <h2>{prod.title}</h2>
         <p>{prod.description}</p>
         <h2>R${prod.price.toFixed(2)}</h2>
         <img alt={prod.title} src={prod.image}/>
-        <button onClick={()=>deleteProduct(prod)}>REMOVER</button>
+        <button className='removeButton'onClick={()=>deleteProduct(prod)}>REMOVER</button>
         </div>
       ))}
     </Container>
