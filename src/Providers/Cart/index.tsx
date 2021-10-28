@@ -32,7 +32,7 @@ export const CartProvider = ({ children }: CartProps) => {
         setCart([...cart, product]);
     };
 
-    const deleteProduct = (productToBeDeleted: number) => {
+    const deleteProduct = (productToBeDeleted: Product) => {
         const newCart = cart.filter(
             (product) => product.id !== productToBeDeleted.id
         );
